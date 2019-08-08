@@ -1,7 +1,193 @@
 /*
-  Theme Name: EliteCorp
-  Theme Coder: Osama Elzero
+  Theme Name: skills
+  Theme Coder: acil 
   PSD Designer:
   FirstColor: #08526d
   SecondColor: #ec1c23
 */
+body{
+	background: #c4c4c4;
+	font-family: tahoma;
+	font-size: 20px;
+}
+
+/* 
+
+1-Create Text Fill Effects With Border On Hover:
+------------------------------------------------
+	-we have link and we need to give him position relative and 
+	 color with rgba and attr data-text
+	-we put in :befor the data-text and we make it absolute above
+	 our link and we give him rgba with opacity 1, we give him also width 0%
+	 and overflow hidden to no show him ,and border-top also
+	-if we :hover the link we make the :befor with 100%; 
+*/
+
+.width-fill{
+	background: #3e3c3c;
+	color: #FFF
+}
+
+.width-fill a {
+	margin: 20px;
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: rgba(255,255,255,.5);
+	padding: 10px 0;
+}
+
+.width-fill a:before{
+	content: attr(data-text);
+	display: inline-block;
+	position: absolute;
+	top: -3px;/* -3px cause we have border-top 3px*/
+	left: 0;
+	padding: 10px 0;
+	color: rgba(255,255,255,1);
+	width: 0%;
+	border-top: 3px solid orange;
+	overflow: hidden;
+	transition: .4s;
+	white-space: nowrap;/*if we have more than 1 word will be no issue */
+}
+
+.width-fill a:hover:before{
+	width: 100%;
+}
+
+
+/* 
+-Image Title Hover Effect:
+--------------------------
+	-with after on make dive blank above our div with position absolute
+	 and with width and height with the use of funcion calc();
+
+*/
+
+.hover-imge {
+	width: 300px;
+    height: 200px;
+    margin: auto 20px;
+    background: #3e3c3c;
+    padding: 0;
+    color: #FFF;
+    position: relative;
+}
+
+h2{
+	position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #FFF;
+    font-size: 18px;
+    background: #3e3c3c;
+    padding: 5px;
+}
+
+.hover-imge img{
+	width: 100%;
+	height: 100%;
+	transition: .4s;
+}
+
+.hover-imge:hover img{
+	opacity: .2;
+}
+
+.hover-imge .caption{
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+}
+
+.hover-imge .caption h3{
+	padding: 10px;
+    background: #3e3ebe;
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.hover-imge .caption:after{
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	background: #FFF;
+	width: 0;
+	height: calc(100% + 10px);
+	z-index: 0;
+	transition: .4s;
+}
+
+.hover-imge:hover .caption:after{
+	width: calc(100% + 5PX);
+}
+
+
+
+/* Show Text and Change Opacity On Image Hover */
+
+.show-text {
+	width: 300px;
+    height: 200px;
+    margin: auto 20px;
+    background: #3e3c3c;
+    padding: 0;
+    color: #FFF;
+    position: relative;
+    border: 3px solid #FFF;
+    overflow: hidden;
+}
+
+h2{
+	position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #FFF;
+    font-size: 18px;
+    background: #3e3c3c;
+    padding: 5px;
+}
+
+.show-text img{
+	width: 100%;
+	height: 100%;
+	transition: .4s;
+}
+
+.show-text:hover img{
+	opacity: .2;
+}
+
+.show-text .caption{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.show-text .caption h3{
+	padding: 10px;
+    background: #3e3ebe;
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    border-top: 3px solid;
+    border-right: 3px solid;
+    transform: translate(0, 100%);
+    transition: .4s;
+}
+
+.show-text:hover .caption h3{
+	transform: translate(0, 0);
+}
+
+
+
+
+
+
+
+
